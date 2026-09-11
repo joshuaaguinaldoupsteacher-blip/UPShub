@@ -143,6 +143,23 @@
       box-shadow: 0 3px 10px rgba(0,0,0,0.08);
     }
 
+
+    /* TERM COLUMNS */
+    .term-columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      align-items: start;
+    }
+
+    .term-column {
+      min-width: 0;
+    }
+
+    .term-column .accordion {
+      margin-top: 0;
+    }
+
     /* ACCORDION BUTTON */
     .accordion {
       width: 100%;
@@ -268,6 +285,10 @@
       .announcement-moving {
         font-size: 15px;
       }
+
+      .term-columns {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -336,83 +357,81 @@
 
 
 
-      <!-- =====================
-           TERM 1
-      ====================== -->
+      <div class="term-columns">
 
-      <button class="accordion">
-        📂 Term 1
-      </button>
+        <!-- =====================
+             TERM 1
+        ====================== -->
+        <div class="term-column">
+          <button class="accordion">
+            📂 Term 1
+          </button>
 
-      <div class="panel">
-        <div class="panel-content">
+          <div class="panel">
+            <div class="panel-content">
 
-          <a class="week-link"
-             href="https://drive.google.com/drive/folders/1mH2dzWiJVe9cGKl-SkOMf0u0FDzVWTHW?usp=drive_link"
-             target="_blank">
+              <a class="week-link"
+                 href="https://drive.google.com/drive/folders/1mH2dzWiJVe9cGKl-SkOMf0u0FDzVWTHW?usp=drive_link"
+                 target="_blank">
 
-            <span class="week-name">
-              📄 Week 1
-            </span>
+                <span class="week-name">
+                  📄 Week 1
+                </span>
 
-            <span class="open-text">
-              OPEN
-            </span>
+                <span class="open-text">
+                  OPEN
+                </span>
 
-          </a>
+              </a>
 
+              <a class="week-link"
+                 href="https://drive.google.com/drive/folders/10-1xzCuCByUc7_1yA4lDHijkB6N52N7y?usp=sharing"
+                 target="_blank">
 
-          <a class="week-link"
-             href="https://drive.google.com/drive/folders/10-1xzCuCByUc7_1yA4lDHijkB6N52N7y?usp=sharing"
-             target="_blank">
+                <span class="week-name">
+                  📄 Week 2
+                </span>
 
-            <span class="week-name">
-              📄 Week 2
-            </span>
+                <span class="open-text">
+                  OPEN
+                </span>
 
-            <span class="open-text">
-              OPEN
-            </span>
+              </a>
 
-          </a>
-
-
+            </div>
+          </div>
         </div>
-      </div>
 
+        <!-- =====================
+             TERM 2
+        ====================== -->
+        <div class="term-column">
+          <button class="accordion">
+            📂 Term 2
+          </button>
 
+          <div class="panel">
+            <div class="panel-content">
 
-      <!-- =====================
-           TERM 2
-      ====================== -->
-
-      <button class="accordion">
-        📂 Term 2
-      </button>
-
-      <div class="panel">
-        <div class="panel-content">
-
-
+            </div>
+          </div>
         </div>
-      </div>
 
+        <!-- =====================
+             TERM 3
+        ====================== -->
+        <div class="term-column">
+          <button class="accordion">
+            📂 Term 3
+          </button>
 
+          <div class="panel">
+            <div class="panel-content">
 
-      <!-- =====================
-           TERM 3
-      ====================== -->
-
-      <button class="accordion">
-        📂 Term 3
-      </button>
-
-      <div class="panel">
-        <div class="panel-content">
-
-          
-
+            </div>
+          </div>
         </div>
+
       </div>
 
 
