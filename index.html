@@ -256,6 +256,119 @@
       margin-top: 0;
     }
 
+
+    /* =========================
+       SCHOOL EMAIL ACCESS GATE
+    ========================== */
+    body.access-locked {
+      overflow: hidden;
+    }
+
+    body.access-locked #siteContent {
+      filter: blur(8px);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    #siteContent {
+      transition: filter 0.25s ease;
+    }
+
+    .access-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(26, 18, 39, 0.48);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+
+    .access-overlay.hidden {
+      display: none;
+    }
+
+    .access-card {
+      width: min(92vw, 430px);
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
+      border-top: 6px solid #4b2e83;
+    }
+
+    .access-card h2 {
+      margin: 0 0 8px;
+      color: #4b2e83;
+      font-size: 24px;
+    }
+
+    .access-card p {
+      margin: 0 0 18px;
+      color: #555;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .access-card label {
+      display: block;
+      text-align: left;
+      margin-bottom: 7px;
+      color: #333;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .access-card input {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #cfcfcf;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .access-card input:focus {
+      border-color: #4b2e83;
+      box-shadow: 0 0 0 3px rgba(75, 46, 131, 0.12);
+    }
+
+    .access-card button {
+      width: 100%;
+      margin-top: 12px;
+      padding: 13px 16px;
+      border: 0;
+      border-radius: 8px;
+      background: #4b2e83;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .access-card button:hover {
+      background: #3c246a;
+    }
+
+    .access-error {
+      display: none;
+      margin-top: 12px;
+      color: #b42318;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .access-note {
+      margin-top: 14px !important;
+      margin-bottom: 0 !important;
+      font-size: 12px !important;
+      color: #777 !important;
+    }
+
     /* FOOTER */
     footer {
       text-align: center;
@@ -310,7 +423,36 @@
 </head>
 
 
-<body>
+<body class="access-locked">
+
+  <!-- =========================
+       SCHOOL EMAIL ACCESS POPUP
+  ========================== -->
+  <div id="accessOverlay" class="access-overlay" role="dialog" aria-modal="true" aria-labelledby="accessTitle">
+    <div class="access-card">
+      <h2 id="accessTitle">School Access</h2>
+      <p>Please enter your authorized school email to access the UPS Teacher Resource Portal.</p>
+
+      <label for="schoolEmail">School Email</label>
+      <input
+        type="email"
+        id="schoolEmail"
+        placeholder="name@school-email.com"
+        autocomplete="email"
+        aria-describedby="accessError"
+      >
+
+      <button type="button" id="accessButton">Continue</button>
+
+      <div id="accessError" class="access-error" role="alert">
+        This email is not authorized. Please use an approved school email.
+      </div>
+
+      <p class="access-note">Authorized school personnel only.</p>
+    </div>
+  </div>
+
+  <div id="siteContent">
 
   <!-- =========================
        HEADER
@@ -745,8 +887,59 @@
 
     });
 
+  
+
+    /* =========================
+       SCHOOL EMAIL ACCESS
+       Add/remove approved emails below.
+    ========================== */
+
+    const approvedSchoolEmails = [
+      "teacher1@yourschool.com",
+      "joshua.aguinaldoupsteacher@gmail.com",
+      "teacher3@yourschool.com"
+    ].map(email => email.toLowerCase());
+
+    const accessOverlay = document.getElementById("accessOverlay");
+    const schoolEmailInput = document.getElementById("schoolEmail");
+    const accessButton = document.getElementById("accessButton");
+    const accessError = document.getElementById("accessError");
+
+    function unlockPortal() {
+      document.body.classList.remove("access-locked");
+      accessOverlay.classList.add("hidden");
+      schoolEmailInput.value = "";
+      accessError.style.display = "none";
+    }
+
+    function checkSchoolEmail() {
+      const email = schoolEmailInput.value.trim().toLowerCase();
+
+      if (approvedSchoolEmails.includes(email)) {
+        unlockPortal();
+      } else {
+        accessError.style.display = "block";
+        schoolEmailInput.focus();
+        schoolEmailInput.select();
+      }
+    }
+
+    accessButton.addEventListener("click", checkSchoolEmail);
+
+    schoolEmailInput.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        checkSchoolEmail();
+      }
+    });
+
+    window.addEventListener("load", function() {
+      schoolEmailInput.focus();
+    });
+
   </script>
 
+
+  </div><!-- /#siteContent -->
 
 </body>
 </html>
