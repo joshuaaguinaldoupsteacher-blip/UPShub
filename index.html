@@ -19,7 +19,7 @@
       color: #222;
     }
 
-    /* HEADER */
+    /* ============== HEADER ============== */
     .header {
       background: #4b2e83;
       color: white;
@@ -69,21 +69,21 @@
       opacity: 0.9;
     }
 
-    /* MAIN CONTAINER */
+    /* ============== MAIN CONTAINER ============== */
     .container {
       width: 92%;
       max-width: 1000px;
       margin: 30px auto;
     }
 
-    /* SECTION TITLE */
+    /* ============== SECTION TITLE ============== */
     .section-title {
       margin-bottom: 15px;
       color: #4b2e83;
       font-size: 22px;
     }
 
-    /* ANNOUNCEMENT BOARD */
+    /* ============== ANNOUNCEMENT BOARD ============== */
     .announcement-board {
       background: white;
       border-radius: 12px;
@@ -128,14 +128,14 @@
       }
     }
 
-    /* OPTIONAL STATIC MESSAGE */
+    /* ============== ANNOUNCEMENT DETAILS ============== */
     .announcement-details {
       margin-top: 15px;
       line-height: 1.6;
       font-size: 15px;
     }
 
-    /* RESOURCE SECTION */
+    /* ============== RESOURCE SECTION ============== */
     .resource-section {
       background: white;
       border-radius: 12px;
@@ -144,7 +144,7 @@
     }
 
 
-    /* TERM COLUMNS */
+    /* ============== TERM COLUMNS ============== */
     .term-columns {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -160,7 +160,7 @@
       margin-top: 0;
     }
 
-    /* ACCORDION BUTTON */
+    /* ============== ACCORDION BUTTON ============== */
     .accordion {
       width: 100%;
       border: none;
@@ -194,7 +194,7 @@
       transform: rotate(180deg);
     }
 
-    /* ACCORDION PANEL */
+    /* ============== ACCORDION PANEL ============== */
     .panel {
       max-height: 0;
       overflow: hidden;
@@ -208,7 +208,7 @@
       padding: 10px 15px 15px 15px;
     }
 
-    /* WEEK LINKS */
+    /* ============== WEEK LINKS ============== */
     .week-link {
       display: flex;
       align-items: center;
@@ -244,7 +244,7 @@
       font-weight: bold;
     }
 
-    /* HIGHLIGHT MOST RECENT WOP WEEK */
+    /* ============== LATEST WOP WEEK ============== */
     .week-link.latest-week {
       background: #4b2e83;
       color: #ffffff;
@@ -262,7 +262,7 @@
     }
 
 
-    /* BUDGET OF WORK GRID */
+    /* ============== BUDGET OF WORK GRID ============== */
     .bow-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -274,7 +274,7 @@
     }
 
 
-    /* NESTED RESOURCE FOLDERS */
+    /* ============== NESTED RESOURCE FOLDERS ============== */
     .nested-content {
       padding-left: 12px;
       padding-right: 4px;
@@ -302,9 +302,7 @@
     }
 
 
-    /* =========================
-       SCHOOL EMAIL ACCESS GATE
-    ========================== */
+    /* ============== SCHOOL EMAIL ACCESS GATE ============== */
     body.access-locked {
       overflow: hidden;
     }
@@ -414,7 +412,7 @@
       color: #777 !important;
     }
 
-    /* FOOTER */
+    /* ============== FOOTER ============== */
     footer {
       text-align: center;
       margin-top: 35px;
@@ -423,7 +421,7 @@
       font-size: 13px;
     }
 
-    /* MOBILE */
+    /* ============== MOBILE ============== */
     @media (max-width: 600px) {
       .header {
         min-height: 120px;
@@ -470,9 +468,7 @@
 
 <body class="access-locked">
 
-  <!-- =========================
-       SCHOOL EMAIL ACCESS POPUP
-  ========================== -->
+  <!-- ============== SCHOOL EMAIL ACCESS POPUP ============== -->
   <div id="accessOverlay" class="access-overlay" role="dialog" aria-modal="true" aria-labelledby="accessTitle">
     <div class="access-card">
       <h2 id="accessTitle">School Access</h2>
@@ -499,9 +495,7 @@
 
   <div id="siteContent">
 
-  <!-- =========================
-       HEADER
-  ========================== -->
+  <!-- ============== HEADER ============== -->
 
   <header class="header">
     <div class="header-brand">
@@ -517,10 +511,7 @@
   <main class="container">
 
 
-    <!-- =========================
-         SECTION 1
-         ANNOUNCEMENT BOARD
-    ========================== -->
+    <!-- ============== ANNOUNCEMENT BOARD ============== -->
 
     <section class="announcement-board">
 
@@ -546,11 +537,7 @@
     </section>
 
 
-
-    <!-- =========================
-         SECTION 2
-         WEEKLY OVERVIEW
-    ========================== -->
+    <!-- ============== WEEKLY OVERVIEW ============== -->
 
     <section class="resource-section">
 
@@ -559,12 +546,9 @@
       </h2>
 
 
-
       <div class="term-columns">
 
-        <!-- =====================
-             TERM 1
-        ====================== -->
+        <!-- ============== TERM 1 ============== -->
         <div class="term-column">
           <button class="accordion"style="text-align: center;">
             Term 1
@@ -633,9 +617,7 @@
           </div>
         </div>
 
-        <!-- =====================
-             TERM 2
-        ====================== -->
+        <!-- ============== TERM 2 ============== -->
         <div class="term-column">
           <button class="accordion"style="text-align: center;">
             Term 2
@@ -648,9 +630,7 @@
           </div>
         </div>
 
-        <!-- =====================
-             TERM 3
-        ====================== -->
+        <!-- ============== TERM 3 ============== -->
         <div class="term-column">
           <button class="accordion"style="text-align: center;">
             Term 3
@@ -669,10 +649,7 @@
     </section>
 
  <br>
-<!-- =============================================================
-     SECTION 3
-     2026-2027 DOWNLOADABLES
-============================================================= -->
+<!-- ============== 2026-2027 DOWNLOADABLES ============== -->
 
     <section class="resource-section">
 
@@ -680,9 +657,7 @@
         2026-2027 DOWNLOADABLES
       </h2>
 
-      <!-- =====================
-           CLASS RECORDS
-      ====================== -->
+      <!-- ============== CLASS RECORDS ============== -->
       <button class="accordion">
         📂 CLASS RECORDS
       </button>
@@ -706,8 +681,149 @@
 
        </div>
       </div>
+
+<!-- ============== TIMETABLES ============== -->
+          <button class="accordion">
+            📂 CLASS LIST
+      </button>
+
+      <div class="panel">
+        <div class="panel-content">
+          <div class="bow-grid">
+
+
+          <a class="week-link"
+             href="https://drive.google.com/file/d/1CVmIZAYuX6hE7UVd-gaIU8x8_kmF5fmz/view?usp=drive_link"
+             target="_blank">
+
+            <span class="week-name">
+              📄 Grade 4
+            </span>
+
+            <span class="open-text">
+              OPEN
+            </span>
+
+          </a>
+
+          <a class="week-link"
+             href="https://drive.google.com/file/d/1-NQI0cAkGACnX3LKfi6vEN6M46zh4px5/view?usp=drive_link"
+             target="_blank">
+
+            <span class="week-name">
+              📄 Grade 5
+            </span>
+
+            <span class="open-text">
+              OPEN
+            </span>
+
+          </a>
+
+          <a class="week-link"
+             href="https://drive.google.com/file/d/146VinFDfQEpBENtsggW7UGL650c6wnah/view?usp=drive_link"
+             target="_blank">
+
+            <span class="week-name">
+              📄 Grade 6
+            </span>
+
+            <span class="open-text">
+              OPEN
+            </span>
+
+          </a>
+
+          <a class="week-link"
+             href="https://drive.google.com/file/d/1-kwEcYkdOQO8KV8kBnvQoLyPAb1D2PyH/view?usp=drive_link"
+             target="_blank">
+
+            <span class="week-name">
+              📄 Grade 7
+            </span>
+
+            <span class="open-text">
+              OPEN
+            </span>
+
+          </a>
+
+          <a class="week-link"
+             href="https://drive.google.com/file/d/1fq8a_dyyufS3eiAKz6u52AO2TQ65ApHD/view?usp=drive_link"
+             target="_blank">
+
+            <span class="week-name">
+              📄 Grade 8
+            </span>
+
+            <span class="open-text">
+              OPEN
+            </span>
+
+          </a>
+
+          <a class="week-link"
+             href="https://drive.google.com/file/d/1c8MOronjdUzk6tnreJUeZZD06tRf8GSZ/view?usp=drive_link"
+             target="_blank">
+
+            <span class="week-name">
+              📄 Grade 9
+            </span>
+
+            <span class="open-text">
+              OPEN
+            </span>
+
+          </a>
+
+          <a class="week-link"
+             href="https://drive.google.com/file/d/1G21nK2O1Okpxe6mQNM9RkyGAbZVZ2plk/view?usp=drive_link"
+             target="_blank">
+
+            <span class="week-name">
+              📄 Grade 10
+            </span>
+
+            <span class="open-text">
+              OPEN
+            </span>
+
+          </a>
+
+          <a class="week-link"
+             href="https://drive.google.com/file/d/1kemGYI0fyD16cR4XOfR9iBVOhJwFcGf_/view?usp=drive_link"
+             target="_blank">
+
+            <span class="week-name">
+              📄 Grade 11
+            </span>
+
+            <span class="open-text">
+              OPEN
+            </span>
+
+          </a>
+
+          <a class="week-link"
+             href="https://drive.google.com/file/d/1JajkGgh3E2vr3rXJdRJOKc2alEJRZ1H9/view?usp=drive_link"
+             target="_blank">
+
+            <span class="week-name">
+              📄 Grade 12
+            </span>
+
+            <span class="open-text">
+              OPEN
+            </span>
+
+          </a>
+
+        </div>
+      </div>
+    </div>
+
  
-<!-- Timetables -->
+<!-- ============== TIMETABLES ============== -->
           <button class="accordion">
             📂 TEACHERS' TIMETABLE
       </button>
@@ -1056,7 +1172,7 @@
       </div>
     </div>
 
-<!-- Timetables -->
+<!-- ============== TIMETABLES ============== -->
           <button class="accordion">
             📂 CLASS TIMETABLE
       </button>
@@ -1083,10 +1199,7 @@
 
     <br>
 
-<!-- =============================================================
-     SECTION 4
-     ACADEMIC RESOURCES
-============================================================= -->
+<!-- ============== ACADEMIC RESOURCES ============== -->
 
     <section class="resource-section">
 
@@ -1094,16 +1207,14 @@
         ACADEMIC RESOURCES
       </h2>
 
-      <!-- =====================
-           CURRICULUM PLAN
-      ====================== -->
+      <!-- ============== CURRICULUM PLAN ============== -->
       <button class="accordion">
         📂 CURRICULUM PLAN
       </button>
       <div class="panel">
         <div class="panel-content nested-content">
 
-          <!-- Budget of Work -->
+          <!-- ============== BUDGET OF WORK ============== -->
           <button class="accordion nested-accordion level-1">
             BUDGET OF WORK (BoW)
       </button>
@@ -1283,12 +1394,11 @@
           </div>
 
 
-
         </div>
       </div>
 
 
-          <!-- Scope and Sequence -->
+          <!-- ============== SCOPE AND SEQUENCE ============== -->
 
       <button class="accordion nested-accordion level-1">
             SCOPE AND SEQUENCE
@@ -1439,11 +1549,10 @@
           </div>
 
 
-
         </div>
       </div>
 
-          <!-- Matrix -->
+          <!-- ============== MATRIX ============== -->
          <a class="week-link"
              href="https://drive.google.com/drive/folders/1YPNPPAOF7ZcHuQliX2ugs_v1HUAT3c2r?usp=drive_link"
              target="_blank">
@@ -1460,16 +1569,14 @@
      </div>
     </div>
 
-      <!-- =====================
-           TEACHER COMPILATIONS
-      ====================== -->
+      <!-- ============== TEACHER COMPILATIONS ============== -->
       <button class="accordion">
         📂 TEACHER COMPILATIONS
       </button>
       <div class="panel">
         <div class="panel-content nested-content">
 
-          <!-- Lesson Plan -->
+          <!-- ============== LESSON PLAN ============== -->
           <button class="accordion nested-accordion level-1">
             LESSON PLAN
           </button>
@@ -1493,7 +1600,7 @@
             </div>
           </div>
 
-          <!-- Data Analysis -->
+          <!-- ============== DATA ANALYSIS ============== -->
                 <button class="accordion nested-accordion level-1">
             DATA ANALYSIS
       </button>
@@ -1643,15 +1750,12 @@
           </div>
 
 
-
         </div>
       </div>
      </div>
     </div>
 
-      <!-- =====================
-           SUBSTITUTION MATERIALS
-      ====================== -->
+      <!-- ============== SUBSTITUTION MATERIALS ============== -->
       <button class="accordion">
         📂 SUBSTITUTION MATERIALS
       </button>
@@ -1683,20 +1787,11 @@
   </footer>
 
 
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
+  <!-- ============== JAVASCRIPT ============== -->
 
   <script>
 
     const accordions = document.querySelectorAll(".accordion");
-
-    /*
-      Nested accordion handling:
-      Open panels use unrestricted height ("none") so deeper folders
-      can expand without clipping Grade 7–12 or the folders below them.
-    */
     accordions.forEach(function(button) {
       button.addEventListener("click", function() {
         const panel = this.nextElementSibling;
@@ -1717,10 +1812,7 @@
 
   
 
-    /* =========================
-       SCHOOL EMAIL ACCESS
-       Add/remove approved emails below.
-    ========================== */
+    /* ============== SCHOOL EMAIL ACCESS ============== */
 
     const approvedSchoolEmails = [
       "tprincipal@universalphilippine.school",
@@ -1753,15 +1845,10 @@
       "itcoor@universalphilippine.school",
       "abdallah123151@gmail.com",
       "management@aeg.education",
-      "suhas_tm@outlook.com",
       "1"
     ].map(email => email.toLowerCase());
 
-    /* =========================
-       DYNAMIC TEACHERS' TIMETABLE
-       Regular teacher accounts see only their own timetable.
-       All-access accounts see every timetable file.
-    ========================== */
+    /* ============== DYNAMIC TEACHERS' TIMETABLE ============== */
 
     const timetablePermissions = {
       "Ms. Gisel": "giselsantiagoupsteacher@gmail.com",
@@ -1796,7 +1883,6 @@
       "joshua.aguinaldo.upsteacher@gmail.com",
       "jeremyfideldia123@gmail.com",
       "management@aeg.education",
-      "suhas_tm@outlook.com",
       "1"
     ]);
 
@@ -1866,7 +1952,7 @@
   </script>
 
 
-  </div><!-- /#siteContent -->
+  </div><!-- ============== END SITE CONTENT ============== -->
 
 </body>
 </html>
