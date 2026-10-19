@@ -550,44 +550,6 @@
     .system-name { font-size: 17px; font-weight: 700; color: #4b2e83; }
     .system-description { font-size: 13px; line-height: 1.45; color: #555; flex: 1; }
     .system-action { font-size: 13px; font-weight: 700; color: #4b2e83; }
-    /* Marks system temporarily unavailable pending approval */
-    .system-pending {
-      position: relative;
-      overflow: hidden;
-      background: #ededf0;
-      border-color: #d4d4d9;
-      cursor: not-allowed;
-    }
-    .system-pending .system-name,
-    .system-pending .system-description,
-    .system-pending .system-action { color: #909099; }
-    .system-pending:hover, .system-pending:focus-visible {
-      background: #ededf0;
-      border-color: #d4d4d9;
-      transform: none;
-      box-shadow: none;
-    }
-    .system-pending-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(245,245,248,.68);
-      filter: grayscale(0);
-    }
-    .system-pending-overlay span {
-      display: inline-block;
-      padding: 11px 18px;
-      border: 2px solid #63339a;
-      border-radius: 9px;
-      background: rgba(255,255,255,.96);
-      color: #63339a;
-      font-size: 19px;
-      font-weight: 800;
-      letter-spacing: .3px;
-      box-shadow: 0 3px 12px rgba(50,25,85,.12);
-    }
     @media (max-width: 700px) {
       .systems-grid { grid-template-columns: 1fr; }
       .system-link { min-height: 0; gap: 7px; padding: 15px; }
@@ -683,18 +645,16 @@
           <span class="system-description">Record and monitor student attendance.</span>
           <span class="system-action">Open System →</span>
         </a>
-        <div class="system-link system-pending" aria-label="School Marks Entry System — For Approval, currently unavailable">
+        <a class="system-link" href="https://joshuaaguinaldoupsteacher-blip.github.io/UPSMarksSystem/" target="_blank" rel="noopener noreferrer">
           <span class="system-name">School Marks Entry System</span>
           <span class="system-description">Enter, review and submit students' marks.</span>
           <span class="system-action">Open System →</span>
-          <span class="system-pending-overlay"><span>For Approval</span></span>
-        </div>
-        <div class="system-link system-pending" aria-label="School Dismissal System — For Approval, currently unavailable">
+        </a>
+        <a class="system-link" href="https://upschool112-gif.github.io/ups-dismissal-system/" target="_blank" rel="noopener noreferrer">
           <span class="system-name">School Dismissal System</span>
           <span class="system-description">Access classroom display, gate staff and monitoring functions as authorized.</span>
           <span class="system-action">Open System →</span>
-          <span class="system-pending-overlay"><span>For Approval</span></span>
-        </div>
+        </a>
       </div>
     </section>
 
