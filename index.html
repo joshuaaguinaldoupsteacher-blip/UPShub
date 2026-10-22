@@ -430,32 +430,6 @@
       color: #777 !important;
     }
 
-
-    /* ============== REMEMBERED PORTAL ACCESS ============== */
-    .portal-access-bar {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 12px;
-      padding: 9px 4%;
-      background: #f2edf8;
-      color: #4b2e83;
-      font-size: 13px;
-      flex-wrap: wrap;
-    }
-    .portal-access-bar #activeSchoolEmail { overflow-wrap: anywhere; }
-    .portal-switch-account {
-      background: transparent;
-      color: #4b2e83;
-      border: 1px solid #bda9d6;
-      border-radius: 7px;
-      padding: 7px 11px;
-      font: inherit;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .portal-switch-account:hover { background: #e5daf3; }
-
     /* ============== FOOTER ============== */
     footer {
       text-align: center;
@@ -506,55 +480,6 @@
         grid-template-columns: 1fr;
       }
     }
-
-    /* ============== SCHOOL MANAGEMENT SYSTEMS ============== */
-    .management-systems {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    }
-    .management-systems .systems-intro {
-      color: #666;
-      font-size: 14px;
-      line-height: 1.5;
-      margin: -4px 0 17px;
-    }
-    .systems-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .system-link {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 9px;
-      min-height: 148px;
-      border: 1px solid #ded5eb;
-      border-radius: 10px;
-      padding: 17px;
-      color: #332347;
-      background: #faf8fd;
-      text-decoration: none;
-      transition: background .2s, border-color .2s, transform .2s, box-shadow .2s;
-    }
-    .system-link:hover, .system-link:focus-visible {
-      background: #f0e9f9;
-      border-color: #4b2e83;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(75,46,131,.12);
-    }
-    .system-link:focus-visible { outline: 3px solid #a890d1; outline-offset: 2px; }
-    .system-name { font-size: 17px; font-weight: 700; color: #4b2e83; }
-    .system-description { font-size: 13px; line-height: 1.45; color: #555; flex: 1; }
-    .system-action { font-size: 13px; font-weight: 700; color: #4b2e83; }
-    @media (max-width: 700px) {
-      .systems-grid { grid-template-columns: 1fr; }
-      .system-link { min-height: 0; gap: 7px; padding: 15px; }
-    }
-
   </style>
 </head>
 
@@ -599,11 +524,6 @@
       </div>
     </div>
   </header>
-    <div class="portal-access-bar" id="portalAccessBar" hidden>
-      <span>Using: <strong id="activeSchoolEmail"></strong></span>
-      <button type="button" class="portal-switch-account" id="switchSchoolAccount">Switch Account</button>
-    </div>
-
 
 
   <main class="container">
@@ -634,29 +554,6 @@
 
     </section>
 
-
-    <!-- ============== SCHOOL MANAGEMENT SYSTEMS ============== -->
-    <section class="management-systems" aria-labelledby="managementSystemsTitle">
-      <h2 class="section-title" id="managementSystemsTitle">School Management Systems</h2>
-      <p class="systems-intro">Quick access to essential school systems. Select a system to open it in a new tab.</p>
-      <div class="systems-grid">
-        <a class="system-link" href="https://joshuaaguinaldoupsteacher-blip.github.io/UPSAttendance/" target="_blank" rel="noopener noreferrer">
-          <span class="system-name">Daily Attendance System</span>
-          <span class="system-description">Record and monitor student attendance.</span>
-          <span class="system-action">Open System →</span>
-        </a>
-        <a class="system-link" href="https://joshuaaguinaldoupsteacher-blip.github.io/UPSMarksSystem/" target="_blank" rel="noopener noreferrer">
-          <span class="system-name">School Marks Entry System</span>
-          <span class="system-description">Enter, review and submit students' marks.</span>
-          <span class="system-action">Open System →</span>
-        </a>
-        <a class="system-link" href="https://upschool112-gif.github.io/ups-dismissal-system/" target="_blank" rel="noopener noreferrer">
-          <span class="system-name">School Dismissal System</span>
-          <span class="system-description">Access classroom display, gate staff and monitoring functions as authorized.</span>
-          <span class="system-action">Open System →</span>
-        </a>
-      </div>
-    </section>
 
     <!-- ============== WEEKLY OVERVIEW ============== -->
 
@@ -760,11 +657,25 @@
               </a>
 
 
-              <a class="week-link latest-week"
+              <a class="week-link"
                  href="https://drive.google.com/drive/folders/1X_tvae0jACsBquJL8-s0C8uwb2xOrAxD?usp=drive_link">
 
                 <span class="week-name">
                   📄 Week 8
+                </span>
+
+                <span class="open-text">
+                  OPEN
+                </span>
+
+              </a>
+
+
+              <a class="week-link latest-week"
+            href="https://drive.google.com/drive/folders/1khOqwfwx6eJdBQIqNCA9GTeiO3Ig1Yit?usp=drive_link">
+
+                <span class="week-name">
+                  📄 Week 9
                 </span>
 
                 <span class="open-text">
@@ -2259,54 +2170,8 @@
     const schoolEmailInput = document.getElementById("schoolEmail");
     const accessButton = document.getElementById("accessButton");
     const accessError = document.getElementById("accessError");
-    const accessBar = document.getElementById("portalAccessBar");
-    const activeSchoolEmail = document.getElementById("activeSchoolEmail");
-    const switchSchoolAccount = document.getElementById("switchSchoolAccount");
-    const ACCESS_STORAGE_KEY = "ups_teacher_portal_access_v1";
-    const ACCESS_DURATION_MS = 12 * 60 * 60 * 1000;
 
-    // This remembers a previously entered email on the current browser/device.
-    // It is a convenience feature, NOT identity verification or secure authentication.
-    function saveRememberedEmail(email) {
-      try {
-        localStorage.setItem(ACCESS_STORAGE_KEY, JSON.stringify({
-          email: email,
-          expiresAt: Date.now() + ACCESS_DURATION_MS
-        }));
-      } catch (error) {
-        // Private browsing / disabled storage: manual entry will still work.
-      }
-    }
-
-    function clearRememberedEmail() {
-      try { localStorage.removeItem(ACCESS_STORAGE_KEY); } catch (error) {}
-    }
-
-    function getRememberedEmail() {
-      try {
-        const raw = localStorage.getItem(ACCESS_STORAGE_KEY);
-        if (!raw) return null;
-        const entry = JSON.parse(raw);
-        if (!entry || typeof entry.email !== "string" ||
-            typeof entry.expiresAt !== "number" ||
-            !Number.isFinite(entry.expiresAt) ||
-            entry.expiresAt <= Date.now() ||
-            entry.expiresAt > Date.now() + ACCESS_DURATION_MS ||
-            !approvedSchoolEmails.includes(entry.email)) {
-          clearRememberedEmail();
-          return null;
-        }
-        return entry.email;
-      } catch (error) {
-        clearRememberedEmail();
-        return null;
-      }
-    }
-
-    function unlockPortal(email) {
-      filterTeachersTimetable(email);
-      activeSchoolEmail.textContent = email;
-      accessBar.hidden = false;
+    function unlockPortal() {
       document.body.classList.remove("access-locked");
       accessOverlay.classList.add("hidden");
       schoolEmailInput.value = "";
@@ -2315,9 +2180,10 @@
 
     function checkSchoolEmail() {
       const email = schoolEmailInput.value.trim().toLowerCase();
+
       if (approvedSchoolEmails.includes(email)) {
-        saveRememberedEmail(email);
-        unlockPortal(email);
+        filterTeachersTimetable(email);
+        unlockPortal();
       } else {
         accessError.style.display = "block";
         schoolEmailInput.focus();
@@ -2326,28 +2192,16 @@
     }
 
     accessButton.addEventListener("click", checkSchoolEmail);
+
     schoolEmailInput.addEventListener("keydown", function(event) {
-      if (event.key === "Enter") checkSchoolEmail();
+      if (event.key === "Enter") {
+        checkSchoolEmail();
+      }
     });
 
-    switchSchoolAccount.addEventListener("click", function() {
-      clearRememberedEmail();
-      activeSchoolEmail.textContent = "";
-      accessBar.hidden = true;
-      document.body.classList.add("access-locked");
-      accessOverlay.classList.remove("hidden");
-      schoolEmailInput.value = "";
-      accessError.style.display = "none";
+    window.addEventListener("load", function() {
       schoolEmailInput.focus();
     });
-
-    // Restore only a still-authorized email within its original 12-hour window.
-    const rememberedEmail = getRememberedEmail();
-    if (rememberedEmail) {
-      unlockPortal(rememberedEmail);
-    } else {
-      schoolEmailInput.focus();
-    }
 
   </script>
 
